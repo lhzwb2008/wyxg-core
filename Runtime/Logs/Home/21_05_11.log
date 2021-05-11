@@ -1,0 +1,257 @@
+[ 2021-05-11T00:30:35+08:00 ] 123.118.117.171 /core/home/data/getUserById?id=385986
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000221s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000273s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000302s ]
+SQL: SHOW COLUMNS FROM `think_user` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `think_user` WHERE `id` = 385986 LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2021-05-11T00:30:35+08:00 ] 123.118.117.171 /core/home/data/getbanners
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000217s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000269s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000297s ]
+SQL: SHOW COLUMNS FROM `think_banner` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `think_banner` ORDER BY modify_time desc  [ RunTime:0.0003s ]
+
+[ 2021-05-11T00:30:35+08:00 ] 123.118.117.171 /core/home/data/getGedans
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000205s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000289s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000317s ]
+SQL: SHOW COLUMNS FROM `think_gedan` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `think_gedan` WHERE ( status=1 ) ORDER BY modify_time desc  [ RunTime:0.0003s ]
+
+[ 2021-05-11T00:30:36+08:00 ] 123.118.117.171 /core/home/data/getTuijian?start=0&length=6
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000202s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000256s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000285s ]
+SQL: SHOW COLUMNS FROM `think_song` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `think_song` WHERE ( is_recommended=1 AND public=0 AND sing=0 ) ORDER BY modify_time desc LIMIT 0,6   [ RunTime:0.3811s ]
+
+[ 2021-05-11T00:30:36+08:00 ] 123.118.117.171 /core/home/data/getSingTuijian?start=0&length=6
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000208s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000268s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000298s ]
+SQL: SHOW COLUMNS FROM `think_song` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `think_song` WHERE ( is_recommended=1 AND public=0 AND sing=1 ) ORDER BY modify_time desc LIMIT 0,6   [ RunTime:0.4351s ]
+
+[ 2021-05-11T00:30:36+08:00 ] 123.118.117.171 /core/home/data/getRecommendUser
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000196s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000634s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000668s ]
+SQL: SHOW COLUMNS FROM `think_user` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `think_user` WHERE `recommend` > 0 ORDER BY recommend desc,modify_time desc  [ RunTime:0.4632s ]
+
+[ 2021-05-11T00:30:36+08:00 ] 123.118.117.171 /core/home/data/getMessageByReceiveId?receive_id=385986
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.024267s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000321s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000355s ]
+SQL: SHOW COLUMNS FROM `think_message` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `think_message` WHERE `receive_id` = 385986 ORDER BY create_time desc  [ RunTime:0.5011s ]
+
+[ 2021-05-11T00:30:38+08:00 ] 123.118.117.171 /core/home/data/getHaogeci
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000197s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000282s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000310s ]
+SQL: SHOW COLUMNS FROM `think_song` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `think_song` WHERE ( is_haogeci=1 ) ORDER BY modify_time desc  [ RunTime:0.3722s ]
+NOTIC: [2] file_get_contents(http://1.117.109.129/core/music/lrc/2fa239bcd7b5acee0f19d4202de4e94c_9.lrc): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ /opt/lampp/htdocs/core/Application/Home/Controller/DataController.class.php 第 1021 行.
+NOTIC: [8] Undefined offset: 1 /opt/lampp/htdocs/core/Application/Home/Controller/DataController.class.php 第 1024 行.
+SQL: SHOW COLUMNS FROM `think_user` [ RunTime:0.0005s ]
+SQL: SELECT `name` FROM `think_user` WHERE ( id='48311' ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [2] file_get_contents(http://1.117.109.129/core/music/lrc/067745869ccc43f8e18cbd200361e0f6_1.lrc): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ /opt/lampp/htdocs/core/Application/Home/Controller/DataController.class.php 第 1021 行.
+NOTIC: [8] Undefined offset: 1 /opt/lampp/htdocs/core/Application/Home/Controller/DataController.class.php 第 1024 行.
+SQL: SELECT `name` FROM `think_user` WHERE ( id='350' ) LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] file_get_contents(http://1.117.109.129/core/music/lrc/2dd0049c35348f22eca0dd1a21a779bd_7.lrc): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ /opt/lampp/htdocs/core/Application/Home/Controller/DataController.class.php 第 1021 行.
+NOTIC: [8] Undefined offset: 1 /opt/lampp/htdocs/core/Application/Home/Controller/DataController.class.php 第 1024 行.
+SQL: SELECT `name` FROM `think_user` WHERE ( id='51103' ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [2] file_get_contents(http://1.117.109.129/core/music/lrc/601beb99da73c3db719f001d50675ba2_2.lrc): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ /opt/lampp/htdocs/core/Application/Home/Controller/DataController.class.php 第 1021 行.
+NOTIC: [8] Undefined offset: 1 /opt/lampp/htdocs/core/Application/Home/Controller/DataController.class.php 第 1024 行.
+SQL: SELECT `name` FROM `think_user` WHERE ( id='50986' ) LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] file_get_contents(http://1.117.109.129/core/music/lrc/0e915b13d9a48192865db779b4e25ea1_1.lrc): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ /opt/lampp/htdocs/core/Application/Home/Controller/DataController.class.php 第 1021 行.
+NOTIC: [8] Undefined offset: 1 /opt/lampp/htdocs/core/Application/Home/Controller/DataController.class.php 第 1024 行.
+SQL: SELECT `name` FROM `think_user` WHERE ( id='50651' ) LIMIT 1   [ RunTime:0.0008s ]
+NOTIC: [2] file_get_contents(http://1.117.109.129/core/music/lrc/5d5aeb91ac096d8e407e3cf15b9052d1_3.lrc): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ /opt/lampp/htdocs/core/Application/Home/Controller/DataController.class.php 第 1021 行.
+NOTIC: [8] Undefined offset: 1 /opt/lampp/htdocs/core/Application/Home/Controller/DataController.class.php 第 1024 行.
+SQL: SELECT `name` FROM `think_user` WHERE ( id='50696' ) LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] file_get_contents(http://1.117.109.129/core/music/lrc/9154aa1d74aa472a67c1ccb59a069231_3.lrc): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ /opt/lampp/htdocs/core/Application/Home/Controller/DataController.class.php 第 1021 行.
+NOTIC: [8] Undefined offset: 1 /opt/lampp/htdocs/core/Application/Home/Controller/DataController.class.php 第 1024 行.
+SQL: SELECT `name` FROM `think_user` WHERE ( id='50651' ) LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] file_get_contents(http://1.117.109.129/core/music/lrc/d3348451ab4b6a2854437207d3a4d00b_1.lrc): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ /opt/lampp/htdocs/core/Application/Home/Controller/DataController.class.php 第 1021 行.
+NOTIC: [8] Undefined offset: 1 /opt/lampp/htdocs/core/Application/Home/Controller/DataController.class.php 第 1024 行.
+SQL: SELECT `name` FROM `think_user` WHERE ( id='48575' ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [2] file_get_contents(http://1.117.109.129/core/music/lrc/82726dd6cf83825a07b23992bf288c83_5.lrc): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ /opt/lampp/htdocs/core/Application/Home/Controller/DataController.class.php 第 1021 行.
+NOTIC: [8] Undefined offset: 1 /opt/lampp/htdocs/core/Application/Home/Controller/DataController.class.php 第 1024 行.
+SQL: SELECT `name` FROM `think_user` WHERE ( id='50498' ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [2] file_get_contents(http://1.117.109.129/core/music/lrc/5b5ee5bc3e6cd74cbf55ae49f78f3572_1.lrc): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ /opt/lampp/htdocs/core/Application/Home/Controller/DataController.class.php 第 1021 行.
+NOTIC: [8] Undefined offset: 1 /opt/lampp/htdocs/core/Application/Home/Controller/DataController.class.php 第 1024 行.
+SQL: SELECT `name` FROM `think_user` WHERE ( id='50409' ) LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] file_get_contents(http://1.117.109.129/core/music/lrc/9d88acd08e411429b893c80310c4ef08_2.lrc): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ /opt/lampp/htdocs/core/Application/Home/Controller/DataController.class.php 第 1021 行.
+NOTIC: [8] Undefined offset: 1 /opt/lampp/htdocs/core/Application/Home/Controller/DataController.class.php 第 1024 行.
+SQL: SELECT `name` FROM `think_user` WHERE ( id='49724' ) LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] file_get_contents(http://1.117.109.129/core/music/lrc/7be6535ffe62e88b594b0569576b2d9e_4.lrc): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ /opt/lampp/htdocs/core/Application/Home/Controller/DataController.class.php 第 1021 行.
+NOTIC: [8] Undefined offset: 1 /opt/lampp/htdocs/core/Application/Home/Controller/DataController.class.php 第 1024 行.
+SQL: SELECT `name` FROM `think_user` WHERE ( id='50498' ) LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] file_get_contents(http://1.117.109.129/core/music/lrc/8176e865ea1f9cf396f6739a57201148_8.lrc): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ /opt/lampp/htdocs/core/Application/Home/Controller/DataController.class.php 第 1021 行.
+NOTIC: [8] Undefined offset: 1 /opt/lampp/htdocs/core/Application/Home/Controller/DataController.class.php 第 1024 行.
+SQL: SELECT `name` FROM `think_user` WHERE ( id='49753' ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [2] file_get_contents(http://1.117.109.129/core/music/lrc/30a5529207fe023e1843bc252fa2ca19_4.lrc): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ /opt/lampp/htdocs/core/Application/Home/Controller/DataController.class.php 第 1021 行.
+NOTIC: [8] Undefined offset: 1 /opt/lampp/htdocs/core/Application/Home/Controller/DataController.class.php 第 1024 行.
+SQL: SELECT `name` FROM `think_user` WHERE ( id='50390' ) LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] file_get_contents(http://1.117.109.129/core/music/lrc/2ab160cf4f70966c5fc12380649aa457_7.lrc): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ /opt/lampp/htdocs/core/Application/Home/Controller/DataController.class.php 第 1021 行.
+NOTIC: [8] Undefined offset: 1 /opt/lampp/htdocs/core/Application/Home/Controller/DataController.class.php 第 1024 行.
+SQL: SELECT `name` FROM `think_user` WHERE ( id='50321' ) LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] file_get_contents(http://1.117.109.129/core/music/lrc/67a42f699937d2fce45e53df29f96ac9_1.lrc): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ /opt/lampp/htdocs/core/Application/Home/Controller/DataController.class.php 第 1021 行.
+NOTIC: [8] Undefined offset: 1 /opt/lampp/htdocs/core/Application/Home/Controller/DataController.class.php 第 1024 行.
+SQL: SELECT `name` FROM `think_user` WHERE ( id='10648' ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [2] file_get_contents(http://1.117.109.129/core/music/lrc/f48f7a9589761b45eaf580f0a03358b7_3.lrc): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ /opt/lampp/htdocs/core/Application/Home/Controller/DataController.class.php 第 1021 行.
+NOTIC: [8] Undefined offset: 1 /opt/lampp/htdocs/core/Application/Home/Controller/DataController.class.php 第 1024 行.
+SQL: SELECT `name` FROM `think_user` WHERE ( id='40792' ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [2] file_get_contents(http://1.117.109.129/core/music/lrc/b5b7d7df7438c00be0964bfbfe71a3e6_6.lrc): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ /opt/lampp/htdocs/core/Application/Home/Controller/DataController.class.php 第 1021 行.
+NOTIC: [8] Undefined offset: 1 /opt/lampp/htdocs/core/Application/Home/Controller/DataController.class.php 第 1024 行.
+SQL: SELECT `name` FROM `think_user` WHERE ( id='50076' ) LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] file_get_contents(http://1.117.109.129/core/music/lrc/86f1df2cc22d73d3fc9c22001b3c28c6_2.lrc): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ /opt/lampp/htdocs/core/Application/Home/Controller/DataController.class.php 第 1021 行.
+NOTIC: [8] Undefined offset: 1 /opt/lampp/htdocs/core/Application/Home/Controller/DataController.class.php 第 1024 行.
+SQL: SELECT `name` FROM `think_user` WHERE ( id='45202' ) LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] file_get_contents(http://1.117.109.129/core/music/lrc/ec01b841d5517c29641d2b3181758864_1.lrc): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ /opt/lampp/htdocs/core/Application/Home/Controller/DataController.class.php 第 1021 行.
+NOTIC: [8] Undefined offset: 1 /opt/lampp/htdocs/core/Application/Home/Controller/DataController.class.php 第 1024 行.
+SQL: SELECT `name` FROM `think_user` WHERE ( id='49933' ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [2] file_get_contents(http://1.117.109.129/core/music/lrc/a7936a8816c7c49f45581ca92a981bbb_2.lrc): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ /opt/lampp/htdocs/core/Application/Home/Controller/DataController.class.php 第 1021 行.
+NOTIC: [8] Undefined offset: 1 /opt/lampp/htdocs/core/Application/Home/Controller/DataController.class.php 第 1024 行.
+SQL: SELECT `name` FROM `think_user` WHERE ( id='48230' ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [2] file_get_contents(http://1.117.109.129/core/music/lrc/1dfb6b751424bab27267a82cfa72dd0f_1.lrc): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ /opt/lampp/htdocs/core/Application/Home/Controller/DataController.class.php 第 1021 行.
+NOTIC: [8] Undefined offset: 1 /opt/lampp/htdocs/core/Application/Home/Controller/DataController.class.php 第 1024 行.
+SQL: SELECT `name` FROM `think_user` WHERE ( id='16081' ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [2] file_get_contents(http://1.117.109.129/core/music/lrc/800be5d443f745099a21e9c782a478f4_2.lrc): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ /opt/lampp/htdocs/core/Application/Home/Controller/DataController.class.php 第 1021 行.
+NOTIC: [8] Undefined offset: 1 /opt/lampp/htdocs/core/Application/Home/Controller/DataController.class.php 第 1024 行.
+SQL: SELECT `name` FROM `think_user` WHERE ( id='16081' ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [2] file_get_contents(http://1.117.109.129/core/music/lrc/4ea71264a749a78a8dc36ebc93ce9f85_1.lrc): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ /opt/lampp/htdocs/core/Application/Home/Controller/DataController.class.php 第 1021 行.
+NOTIC: [8] Undefined offset: 1 /opt/lampp/htdocs/core/Application/Home/Controller/DataController.class.php 第 1024 行.
+SQL: SELECT `name` FROM `think_user` WHERE ( id='11245' ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [2] file_get_contents(http://1.117.109.129/core/music/lrc/c3ec330e52e5aefcef5658edfa4b5e0c_3.lrc): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ /opt/lampp/htdocs/core/Application/Home/Controller/DataController.class.php 第 1021 行.
+NOTIC: [8] Undefined offset: 1 /opt/lampp/htdocs/core/Application/Home/Controller/DataController.class.php 第 1024 行.
+SQL: SELECT `name` FROM `think_user` WHERE ( id='20025' ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [2] file_get_contents(http://1.117.109.129/core/music/lrc/bf1bcb270090fee20af4b6c4782dfba7_5.lrc): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ /opt/lampp/htdocs/core/Application/Home/Controller/DataController.class.php 第 1021 行.
+NOTIC: [8] Undefined offset: 1 /opt/lampp/htdocs/core/Application/Home/Controller/DataController.class.php 第 1024 行.
+SQL: SELECT `name` FROM `think_user` WHERE ( id='22929' ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [2] file_get_contents(http://1.117.109.129/core/music/lrc/0ccd224c798d823d27d56407a0853baf_4.lrc): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ /opt/lampp/htdocs/core/Application/Home/Controller/DataController.class.php 第 1021 行.
+NOTIC: [8] Undefined offset: 1 /opt/lampp/htdocs/core/Application/Home/Controller/DataController.class.php 第 1024 行.
+SQL: SELECT `name` FROM `think_user` WHERE ( id='1872' ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [2] file_get_contents(http://1.117.109.129/core/music/lrc/71d383abef7fb25b29cc135101d15c23_8.lrc): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ /opt/lampp/htdocs/core/Application/Home/Controller/DataController.class.php 第 1021 行.
+NOTIC: [8] Undefined offset: 1 /opt/lampp/htdocs/core/Application/Home/Controller/DataController.class.php 第 1024 行.
+SQL: SELECT `name` FROM `think_user` WHERE ( id='2632' ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [2] file_get_contents(http://1.117.109.129/core/music/lrc/270d8794b2a790269031ce98c08e462e_9.lrc): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ /opt/lampp/htdocs/core/Application/Home/Controller/DataController.class.php 第 1021 行.
+NOTIC: [8] Undefined offset: 1 /opt/lampp/htdocs/core/Application/Home/Controller/DataController.class.php 第 1024 行.
+SQL: SELECT `name` FROM `think_user` WHERE ( id='19145' ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [2] file_get_contents(http://1.117.109.129/core/music/lrc/da91261f0fb0dbf2c0d5777c870532ba_2.lrc): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ /opt/lampp/htdocs/core/Application/Home/Controller/DataController.class.php 第 1021 行.
+NOTIC: [8] Undefined offset: 1 /opt/lampp/htdocs/core/Application/Home/Controller/DataController.class.php 第 1024 行.
+SQL: SELECT `name` FROM `think_user` WHERE ( id='350' ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [2] file_get_contents(http://1.117.109.129/core/music/lrc/a9ba2da965f6f079aba32d1c95a92285_1.lrc): failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ /opt/lampp/htdocs/core/Application/Home/Controller/DataController.class.php 第 1021 行.
+NOTIC: [8] Undefined offset: 1 /opt/lampp/htdocs/core/Application/Home/Controller/DataController.class.php 第 1024 行.
+SQL: SELECT `name` FROM `think_user` WHERE ( id='350' ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2021-05-11T00:31:31+08:00 ] 123.118.117.171 /core/home/index/call?title=%E5%90%90%E6%A7%BD%E5%AD%A6%E4%B9%A01&content=%E6%9D%8E%E5%B2%81%E5%8D%8A%E5%B0%8F%E5%8F%AF%E7%88%B1,%E6%88%91%E8%A6%81%E9%9D%A0%E8%91%97%E4%BD%A0,%E7%9B%B4%E5%88%B0%E7%9C%8B%E8%91%97%E4%BD%A0%E7%9A%84%E8%AF%95%E5%8D%B7,%E6%9C%89%E4%BA%86%E5%A2%A8%E6%B0%B4%E7%9A%84%E7%97%95%E8%BF%B9,%E6%8A%84%E4%BA%86%E5%90%8E%E4%B9%9F%E8%A6%81%E7%9C%8B%E8%91%97%E4%BD%A0,%E7%9B%B4%E5%88%B0%E6%84%9F%E8%A7%89%E4%BD%A0%E7%9A%84%E7%AC%91%E9%A2%9C,%E6%9C%89%E4%BA%86%E5%81%9A%E5%AF%B9%E7%9A%84%E8%A1%A8%E6%83%85,%E7%9B%B4%E5%88%B0%E8%A7%86%E7%BA%BF%E5%8F%98%E5%BE%97%E6%B8%85%E6%99%B0,%E8%AE%A9%E6%88%91%E4%BB%AC%E8%B6%8A%E5%9D%90%E8%B6%8A%E8%BF%91,%E5%A6%82%E6%9E%9C%E7%9B%91%E8%80%83%E5%AE%98%E6%9C%89%E6%97%B6%E5%8F%AF%E4%BB%A5%E5%87%BA%E5%8E%BB,%E8%87%B3%E5%B0%91%E6%88%91%E8%BF%98%E8%83%BD,%E6%8A%84%E5%BE%97%E6%AF%94%E8%BE%83%E5%AE%89%E5%BF%83,%E4%B9%9F%E8%AE%B8%E8%80%83%E8%AF%95%E9%93%83%E9%A9%AC%E4%B8%8A%E5%B0%B1%E8%A6%81%E5%93%8D%E8%B5%B7,%E5%B0%B1%E6%98%AF%E4%B8%8D%E6%84%BF%E6%84%8F,%E6%94%BE%E5%BC%83%E6%9C%80%E5%90%8E%E7%9A%84%E7%94%9F%E6%9C%BA,%E6%88%91%E6%B2%A1%E6%8A%84%E7%9A%84%E9%A2%98%E6%88%91%E6%80%BB%E8%AE%B0%E5%BE%97%E5%9C%A8%E5%93%AA%E9%87%8C&source=1&genre=2&emotion=0&rate=0.6
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000203s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000291s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000317s ]
+NOTIC: [8] Undefined variable: zhugecount /opt/lampp/htdocs/core/Application/Home/Controller/IndexController.class.php 第 79 行.
+NOTIC: [8] Undefined variable: fugecount /opt/lampp/htdocs/core/Application/Home/Controller/IndexController.class.php 第 81 行.
+
+[ 2021-05-11T00:32:19+08:00 ] 123.118.117.171 /core/home/index/call_mid
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000226s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000244s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000271s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given /opt/lampp/htdocs/core/ThinkPHP/Library/Think/Upload.class.php 第 170 行.
+NOTIC: [8] Undefined variable: zhugecount /opt/lampp/htdocs/core/Application/Home/Controller/IndexController.class.php 第 195 行.
+NOTIC: [8] Undefined variable: fugecount /opt/lampp/htdocs/core/Application/Home/Controller/IndexController.class.php 第 197 行.
+
+[ 2021-05-11T00:32:49+08:00 ] 123.118.117.171 /core/home/index/call_mid
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000286s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000352s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000402s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given /opt/lampp/htdocs/core/ThinkPHP/Library/Think/Upload.class.php 第 170 行.
+NOTIC: [8] Undefined variable: zhugecount /opt/lampp/htdocs/core/Application/Home/Controller/IndexController.class.php 第 195 行.
+NOTIC: [8] Undefined variable: fugecount /opt/lampp/htdocs/core/Application/Home/Controller/IndexController.class.php 第 197 行.
+
+[ 2021-05-11T00:32:55+08:00 ] 123.118.117.171 /core/home/data/getMessageByReceiveId?receive_id=385986
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000230s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000250s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000275s ]
+SQL: SHOW COLUMNS FROM `think_message` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `think_message` WHERE `receive_id` = 385986 ORDER BY create_time desc  [ RunTime:0.1890s ]
+
+[ 2021-05-11T00:32:58+08:00 ] 123.118.117.171 /core/home/data/getTemplate
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000214s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000289s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000320s ]
+SQL: SHOW COLUMNS FROM `think_template` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `think_template` WHERE ( status=1 ) ORDER BY modify_time desc  [ RunTime:0.0005s ]
+
